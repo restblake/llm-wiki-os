@@ -45,6 +45,15 @@ Health-check the wiki, fix issues, and **suggest what to investigate next**. Lin
 - [ ] **Missing temporal context**: Event pages without government attribution
 - [ ] **Pre-compilation gaps**: Event/era pages that mention a dataset but don't include specific data points from it (e.g., an event page links to [[datasets/inflation]] but doesn't say what inflation was during that event)
 
+**Philosophical framework compliance (per wiki/CLAUDE.md):**
+- [ ] **Missing source assessment**: Every dataset page MUST have `### Source assessment` with the 7 questions (methodology, definitions, what's not measured, who commissioned, who benefits, revisions, comparison sources). Flag any dataset page without it.
+- [ ] **Missing lenses on synthesis**: Every synthesis page MUST have `### Through different lenses` applying relevant frameworks from `wiki/frameworks/`. Flag any synthesis page without it.
+- [ ] **Missing Popperian caveat**: Every synthesis page MUST end with intellectual humility — "these are conjectures, not proven." Flag any synthesis page without it.
+- [ ] **Single-answer violation**: Any page that presents one clean explanation without alternatives violates the core principle. Read each synthesis, era, and event page — does it present multiple interpretations or just one narrative?
+- [ ] **Bare wikilinks**: Any `- [[page]]` without a why-clause in a Cross-references or Connections section.
+
+When fixing these: **read the page, read the relevant data, and write the missing section.** Don't just flag — fix. For source assessments, apply the 7 questions. For lenses, read `wiki/frameworks/` and apply what fits. For Popperian caveats, add one that's specific to the page's content, not generic.
+
 **Schema health:**
 - [ ] **Page type coverage**: All types in CLAUDE.md actually used?
 - [ ] **Convention drift**: Patterns in pages not documented in schema?
@@ -66,6 +75,13 @@ Health-check the wiki, fix issues, and **suggest what to investigate next**. Lin
 
 ### Data quality
 - ...
+
+### Philosophical framework compliance
+- N dataset pages missing source assessment
+- N synthesis pages missing ### Through different lenses
+- N synthesis pages missing Popperian caveat
+- N pages with single-answer violations
+- N bare wikilinks without why-clauses
 
 ### Schema health
 - ...
