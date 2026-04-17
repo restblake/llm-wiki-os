@@ -104,9 +104,25 @@ A wiki where every claim is hedged into "might possibly be somewhat consistent w
 After presenting the report, ask: **"Should I apply these revisions?"**
 
 If approved:
+- **Set `stress_tested: <YYYY-MM-DD>` in the page frontmatter (REQUIRED).** This is the machine-checkable marker downstream skills (e.g., `/story-map:integrate`) read before consuming a synthesis.
 - **Downgrade/upgrade claims** in the synthesis page — change the language to match the evidential warrant
 - **Add a `### Stress-tested` section** to the synthesis page noting when it was reflected on and what changed
-- **Update the hypothesis catalogue** if the synthesis has one
+- **Update the hypothesis catalogue (REQUIRED).** Every reflected synthesis page must carry a hypothesis catalogue table. If one doesn't exist, create it. Schema:
+
+  | ID | Hypothesis | Verdict | Movement | Evidence summary |
+  |----|------------|---------|----------|------------------|
+  | `<slug>` | <claim> | <verdict from controlled vocab below> | UPGRADED / unchanged / DOWNGRADED | <one line> |
+
+  **Controlled verdict vocabulary (do not invent new values):**
+  - **UPGRADED** — survived stress-test; evidence stronger than originally framed
+  - **Supported** — claim holds as originally framed
+  - **Supported with caveat** — claim holds but with an explicit limitation
+  - **Hold** — reasonably supported but needs more data to firm up
+  - **DOWNGRADED** — claim is weaker than originally framed
+  - **Not supported** — evidence runs against the claim
+  - **Unfalsifiable** — cannot currently be tested with available data
+
+  The `ID` column is a stable kebab-case slug derived from the hypothesis, so downstream skills can reference a specific row by `<page>#<id>` (e.g., `why-uk-building-costs-high#materials-inflation-not-primary`).
 - **Disperse findings** — update any pages that cited the original claim (era pages, concept pages)
 - **Create a question page** if the stress-test produced a substantial analysis worth preserving
 - **Add new backlog entries** for any data gaps identified that aren't already in the pipeline
