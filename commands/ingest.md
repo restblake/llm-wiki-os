@@ -180,6 +180,7 @@ Read `wiki/backlog.md` and update:
 - If this source was in "Approved" or "Built" → move it to "Ingested" with today's date
 - If this source was NOT in the backlog (manual ingest) → add it to "Ingested"
 - Remove `status: stub` from any stub pages that were filled during this ingest, AND refresh `updated: <YYYY-MM-DD>` in the same frontmatter — filling a stub is a substantive update and the date must reflect it
+- **Close the GH issue** if the backlog entry has one. Run `gh issue close <num> --comment "Ingested in commit <hash>"`. This keeps GH kanban state in sync with wiki state. Without this, an open GH issue after ingestion becomes a lagging tracking artifact that makes downstream tools (e.g., `/operator next`) mis-classify completed work as unfinished. If `gh issue close` fails, log but don't abort — the wiki state is what matters; GH is a secondary view.
 - Note: the backlog is the compounding loop's memory — keep it accurate
 
 ### Step 11: Suggest what to do next
