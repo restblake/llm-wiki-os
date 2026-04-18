@@ -9,6 +9,24 @@ The wiki's self-audit. After a synthesis page is created or significantly update
 
 The human decides WHEN to reflect. The LLM does the stress-testing.
 
+## Purpose
+
+Reflect is the wiki's **ongoing calibration layer** — it keeps claim calibration honest with *currently-available* evidence.
+
+**What reflect IS:**
+- Calibration maintenance — runs any time evidence has changed materially
+- A quality gate whose output (`stress_tested:` frontmatter, updated hypothesis catalogue) is consumed by `/story-map:integrate`
+- **Continuous, not one-shot**: every significant ingest potentially stales existing claim calibration, and reflect is how that calibration is refreshed
+
+**What reflect IS NOT:**
+- A one-shot analytical exercise that waits for all relevant data before running
+- A decomposition-completeness check
+- An excuse to defer until "we have more evidence" — **stale calibration is worse than partial calibration**
+
+**Common failure mode:** deferring reflect until a multi-dataset analysis is "complete." This conflates decomposition completeness (one-shot analytical work) with calibration maintenance (continuous quality maintenance). After every significant ingest, claims calibration is potentially stale. That's when to reflect, not when all the data is in.
+
+If you find yourself (or an advisor) recommending "wait until more data lands" to defer reflect, check which kind of work you're actually talking about. Analytical completeness can wait. Calibration maintenance shouldn't.
+
 ## Input
 
 `$ARGUMENTS` — one of:
