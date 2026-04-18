@@ -129,6 +129,8 @@ Example:
 **Contradiction handling:**
 When new data contradicts existing wiki content, do NOT silently overwrite. Add a `### Disputed` subsection showing both claims with citations.
 
+**Figure verification — specific case.** If this ingest was motivated by a prior `/wiki:discover` round, its synthesis or stub pages may cite specific numbers (percentages, peak values, dates) that were directional evidence at discovery time, not canonical values. Verify each figure against the source you just read. If a dossier figure does not reconcile with the canonical data, apply the protocol: `### Disputed` section citing both the dossier value and all canonical variants with their actual values, investigation trail preserved, never silent pick. Template: `datasets/construction-price-index.md`. Provenance: `thoughts/product/story-map/learnings.md` commits `f44c6cc` + `12c32cf` (2026-04-18).
+
 **Data quality conventions:**
 Apply the three mandatory checks from `wiki/CLAUDE.md`:
 1. Splice discontinuities → document in `### Disputed`
